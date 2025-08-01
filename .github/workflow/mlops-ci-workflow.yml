@@ -1,0 +1,35 @@
+name: MLOps CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@V3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3:11"
+
+    - name: Install Dependencies
+      run: |
+        pip install uv
+        uv venv
+        source .venv/bin/activate
+        uv pip install -r requirements.txt
+
+  
+
+
+
+
+    
+
