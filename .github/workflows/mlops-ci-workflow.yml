@@ -68,8 +68,8 @@ jobs:
       with:
         push: true
         tags: olawalekareemdev/house_predictor:{{ github.sha }}
-        context: {{ . }}
-        file: Dockerfile
+        context: "."
+        file: "Dockerfile"
 
 
     - name: Clean MlFlow Server
