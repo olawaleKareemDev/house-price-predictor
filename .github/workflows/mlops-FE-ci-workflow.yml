@@ -38,6 +38,7 @@ jobs:
 
     - name: Build and push
       run: |
+        cd streamlit_app
         COMMIT_HASH=$(echo ${{ github.sha }} | cut -c1-7)
         docker build  \
         -t docker.io/${{ vars.DOCKERHUB_USERNAME }}/house-price-model-frontend:$COMMIT_HASH \
