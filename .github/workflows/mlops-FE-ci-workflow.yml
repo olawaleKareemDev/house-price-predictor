@@ -42,6 +42,7 @@ jobs:
         docker build  \
         -t docker.io/${{ vars.DOCKERHUB_USERNAME }}/house-price-model-frontend:$COMMIT_HASH \
         -t docker.io/${{ vars.DOCKERHUB_USERNAME }}/house-price-model-frontend:latest \
+        .
         docker push docker.io/${{ vars.DOCKERHUB_USERNAME }}/house-price-model-frontend:$COMMIT_HASH
         docker push docker.io/${{ vars.DOCKERHUB_USERNAME }}/house-price-model-frontend:latest
         
